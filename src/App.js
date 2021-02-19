@@ -2,6 +2,9 @@ import React from 'react';
 import {HashRouter, Route} from 'react-router-dom';
 import Form from './routes/Form';
 import Home from './routes/Home';
+import Header from './components/Header';
+import Description from './components/Description';
+
 import { createGlobalStyle} from 'styled-components';
 
 
@@ -21,8 +24,10 @@ function App() {
     <>
     <GlobalStyle />
       <HashRouter>
+      <Header />
         <Route path="/" exact={true} component={Form}/>
         <Route path="/Home" component={Home}/>
+      <Description/>
       </HashRouter>
     </>
   );

@@ -22,6 +22,7 @@ const InputBlock = styled.input`
   margin-left :10px;
 `;
 
+
 function InfoForm() {
     const [info, setInfo]= useState({name:'Soju', weight:'', selfrec:''});
 
