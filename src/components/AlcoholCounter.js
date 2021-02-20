@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const CounterContainer = styled.div`
     margin : auto;
-    margin-top : 20px;
-    margin-bottom : 30px;
+    margin-top : 40px;
+    margin-bottom : 50px;
 
     padding: 20px;
     border-radius: 5px;
@@ -19,17 +19,23 @@ const CounterContainer = styled.div`
 `;
 
 const NowInfo = styled.p`
+    font-size : 15px;
     margin : auto;
     margin-top: 10px;
     width : 80%;
     text-align: center;
+    list-style:none;
 `;
 
 const ButtonContainer = styled.div`
     margin-top : 20px;
     display: flex;
     justify-content: center;
+    button {
+        margin:2px;
+    }
 `;
+
 
 function AlcoholCounter({ selfrec, weight, name }) {
     const [drinked, setDrinked] = useState(0);
@@ -48,7 +54,7 @@ function AlcoholCounter({ selfrec, weight, name }) {
     }
 
     return (
-
+        <>
         <CounterContainer color={
             // 이렇게 복잡하게 적는게 맞는지 모르겠다.
             // 이것보다 복잡하면 밖에 함수로 빼는것이 더 좋을것 같다. 
@@ -60,13 +66,20 @@ function AlcoholCounter({ selfrec, weight, name }) {
                 return "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)";
             })
         }>
-            <NowInfo>어떤 술??  :  {AlcoholName(name)}</NowInfo>
-            <NowInfo>{drinked} / {selfrec} (권장 {rec.toFixed(2)} 잔)</NowInfo>
+            <NowInfo>당신이 마시는 술은 <br/>"{AlcoholName(name)}" 입니다.</NowInfo>
+            <NowInfo>{drinked} / {selfrec} </NowInfo>
+            <NowInfo>(권장 {rec.toFixed(2)} 잔)</NowInfo>
             <ButtonContainer>
-                <button onClick={handleIncrease}>+</button>
-                <button onClick={handleDecrease}>-</button>
+                <button onClick={handleIncrease}> + </button>
+                <button onClick={handleDecrease}> - </button>
             </ButtonContainer>
         </CounterContainer>
+        <NowInfo>
+            <span style={{color:"green"}}>초록빛은 안정 </span> / 
+            <span style={{color:"blue"}}> 푸른빛은 주의</span> /
+            <span style={{color:"red"}}> 붉은빛은 위험</span>
+        </NowInfo>
+        </>
     )
 }
 
@@ -94,10 +107,10 @@ const CalJan = (weight, name) => {
 
 const AlcoholName = (name) => {
     if(name === "Soju")
-        return "쏘주!!";
+        return "쏘주";
     else if(name === "Macju")   
-        return "맥주!!!";
-    return "쏘맥!!!"
+        return "맥주";
+    return "쏘맥"
 }
 
 export default AlcoholCounter;
