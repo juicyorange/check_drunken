@@ -31,7 +31,8 @@
  (리액트 기초를 공부하기 위해 만들어 보았다)
 
 ## 페이지 접속
- *  https://juicyorange.github.io/check_drunken/#/ 
+ *  https://juicyorange.github.io/check_drunken/#/ <br>
+ (모바일 사용 권장. PC에서는 화면비율이 맞지 않을 수 있음 )
 
 ## 사용법
  1. 먹는 술을 정하고, 그에 따른 자신이 생각하는 주량, 자신의 체중을 입력한다.
